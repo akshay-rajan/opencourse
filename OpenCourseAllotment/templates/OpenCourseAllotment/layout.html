@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Open Course{% endblock %}</title>
-    <link rel="stylesheet" href="{% static "OpenCourseAllotment/styles.css" %}">
+    <title>{% block title %}Open Course Allotment{% endblock %}</title>
     <link rel="stylesheet" href="{% static "OpenCourseAllotment/bootstrap-4.3.1-dist/css/bootstrap.min.css" %}">
     <script src"{% static "OpenCourseAllotment/bootstrap-4.3.1-dist/css/bootstrap.min.js" %}"></script>
+    <link rel="stylesheet" href="{% static "OpenCourseAllotment/styles.css" %}">
     {% block style %}{% endblock %}
     {% block script %}{% endblock %}
 </head>
 <body>
+    <h1 class="display-4">Open Course Allotment</h1>
     {% comment %} !---------------------------------------------  {% endcomment %}
     {% block body %}
     {% endblock %}

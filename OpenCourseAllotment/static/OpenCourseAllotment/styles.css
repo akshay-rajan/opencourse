@@ -1,3 +1,29 @@
 body {
-    background-color: aliceblue;
+    background-color: #DCF2F1;
+    margin: 5px;
+    padding: 20px;
 }
+
+.home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+.home-main .buttons {
+    margin: 20px;
+    margin-top: 10%;
+    padding: 10px;
+}
+.home-main .buttons .btn {
+    padding: 10px;
+    margin: 2px;
+    width: 40vw;
+}
+
+/* DCF2F1
+7FC7D9
+365486
+0F1035 */
