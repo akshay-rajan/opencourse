@@ -45,4 +45,4 @@ Quinn,3254,91.1,Mathematics,Physics,Zoology,Philosophy,English
 Rose,3255,89.6,Physics,Philosophy,Economics,Mathematics,History  
 Sam,3256,93.9,English,Physics,Philosophy,Mathematics,Chemistry  
 Tina,3257,90.3,Economics,Philosophy,Mathematics,Physics,History  
-Vince,3258,88.9,Physics,Mathematics,English,Philosophy,Zoology  
+Vince,3258,88.9,Physics,Mathematics,English,Philosophy,Zoology

@@ -1,4 +1,13 @@
 {% extends "OpenCourseAllotment/layout.html" %}
 {% block body %}
-  {{ data }}
-{% endblock %}%
+  <table class="table">
+    {% for class, students in data.items %}
+      <tr>
+        <th>{{ class }}</th>
+        {% for student in students %}
+          <td>{{ student.0 }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
