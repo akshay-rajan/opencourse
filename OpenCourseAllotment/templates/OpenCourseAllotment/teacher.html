@@ -4,4 +4,13 @@
     {% for class in classes %}
         {{ class.name }}: {{ class.max_students }}<br>
     {% endfor %}
+
+    <h2>Add Class</h2>
+    <form action="{% url "teacher" %}" method="post" class="form-group">
+        {% csrf_token %}
+        <input type="text" name="class" placeholder="Class">
+        <input type="number" name="max_students" placeholder="Max Students">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    {{ message }}
 {% endblock %}

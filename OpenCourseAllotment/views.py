@@ -24,11 +24,27 @@ def teacher(request):
     """Enable adding and deleting classes, and alloting students"""
     
     coll = get_database("classes")
+        
+    if request.method == "POST":
+        clas = request.POST["class"]
+        max_students = request.POST["max_students"]
+        coll.insert_one({"class": clas, "max": max_students})
+    
+        classes = []
+        for c in coll.find():
+            clas = {"name": c["class"], "max_students": c["max"]}
+            classes.append(clas)
+        
+        return render(request, "OpenCourseAllotment/teacher.html", {
+            "classes": classes,
+            "message": "Successfully added class!"
+        })
+    
     classes = []
     for c in coll.find():
         clas = {"name": c["class"], "max_students": c["max"]}
         classes.append(clas)
-    
+        
     return render(request, "OpenCourseAllotment/teacher.html", {
         "classes": classes
     })
