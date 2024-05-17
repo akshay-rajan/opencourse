@@ -2,6 +2,7 @@ import os
 from django.conf import settings
 from django.shortcuts import render
 from . import allotment_algorithm
+from .mongo_client import get_database
 
 
 def index(request):
@@ -19,3 +20,16 @@ def allotment(request):
         "data": data
     })
 
+def teacher(request):
+    """Enable adding and deleting classes, and alloting students"""
+    
+    coll = get_database("classes")
+    classes = []
+    for c in coll.find():
+        clas = {"name": c["class"], "max_students": c["max"]}
+        classes.append(clas)
+    
+    return render(request, "OpenCourseAllotment/teacher.html", {
+        "classes": classes
+    })
+    

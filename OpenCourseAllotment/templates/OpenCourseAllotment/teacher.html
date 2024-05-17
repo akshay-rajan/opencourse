@@ -1,0 +1,7 @@
+{% extends 'OpenCourseAllotment/layout.html' %}
+{% block body %}
+    <h1>Classes</h1>
+    {% for class in classes %}
+        {{ class.name }}: {{ class.max_students }}<br>
+    {% endfor %}
+{% endblock %}
