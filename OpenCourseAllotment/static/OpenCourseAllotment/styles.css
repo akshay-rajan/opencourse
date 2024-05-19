@@ -1,9 +1,6 @@
-body {
+.body {
     background-color: #DCF2F1;
-    margin: 5px;
-    padding: 20px;
 }
-
 .home-main {
     display: flex;
     justify-content: center;
@@ -22,21 +19,29 @@ body {
     margin: 2px;
     width: 40vw;
 }
+.head {
+    height: 20vh;
+    background-image: url(college.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
 
 /* ! Login */
 .login-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: #0F1035;
+    color: #DCF2F1;
     justify-content: center;
     align-items: center;
 }
 .login-heading {
-    /* background-color: rgb(15, 16, 53); */
     background-image: url(college.jpg);
     background-size: cover;
     background-position: center bottom;
-    color: white;
-    filter: brightness(0.6);
+    color: #DCF2F1;
     width: 45vw;
     height: 100vh;
     border: 0px solid black;
@@ -47,8 +52,40 @@ body {
     font-weight: bold;
 }
 .login-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
     margin: 20px;
+    height: 50vh;
+    width: 100%;
+    border: 2px solid #7FC7D9;
+    border-radius: 10px;
+    color: #DCF2F1;
+}
+.login-form input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #7FC7D9;
+    border-radius: 5px;
+    color: #0F1035;
+}
+.login-form button {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #7FC7D9;
+    border-radius: 5px;
+    width: 100%;
+    color: #0F1035;
+    background-color: #7FC7D9;
+    font-weight: bold;
 }
 @media (max-width: 600px) {
     .login-container {

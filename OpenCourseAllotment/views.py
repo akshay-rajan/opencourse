@@ -52,3 +52,7 @@ def teacher(request):
         "classes": classes
     })
     
+def register(request):
+    """Let a student or teacher add an account"""
+    
+    return render(request, "OpenCourseAllotment/register.html")
