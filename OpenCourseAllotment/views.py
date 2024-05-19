@@ -7,6 +7,9 @@ from .mongo_client import get_database
 
 def index(request):
     """Render the home page"""
+    # If not logged in, redirect to login page
+    if not request.user.is_authenticated:
+        return render(request, 'OpenCourseAllotment/login.html')
     
     return render(request, 'OpenCourseAllotment/index.html')
 

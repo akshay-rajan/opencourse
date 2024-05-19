@@ -1,0 +1,35 @@
+{% extends "OpenCourseAllotment/layout.html" %}
+
+<!-- Avoid heading in the layout -->
+{% block heading %} {% endblock %}
+{% block style %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="login-container">
+    <div class="login-heading">
+        Open 
+        Course 
+        Allotment 
+    </div>
+    <div class="login-main">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

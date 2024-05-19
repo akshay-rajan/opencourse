@@ -23,6 +23,51 @@ body {
     width: 40vw;
 }
 
+/* ! Login */
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.login-heading {
+    /* background-color: rgb(15, 16, 53); */
+    background-image: url(college.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    color: white;
+    filter: brightness(0.6);
+    width: 45vw;
+    height: 100vh;
+    border: 0px solid black;
+    border-radius: 0 0 600px 0;
+    padding: 80px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+}
+.login-main {
+    padding: 20px;
+    margin: 20px;
+}
+@media (max-width: 600px) {
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-heading {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        height: 20vh;
+        border-radius: 0;
+        padding: 20px;
+        font-size: 30px;
+    }
+}
+
 /* DCF2F1
 7FC7D9
 365486
