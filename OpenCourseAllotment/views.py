@@ -1,6 +1,6 @@
 import os
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import allotment_algorithm
 from .mongo_client import get_database
 
@@ -9,7 +9,7 @@ def index(request):
     """Render the home page"""
     # If not logged in, redirect to login page
     if not request.user.is_authenticated:
-        return render(request, 'OpenCourseAllotment/login.html')
+        return redirect('/login')
     
     return render(request, 'OpenCourseAllotment/index.html')
 
