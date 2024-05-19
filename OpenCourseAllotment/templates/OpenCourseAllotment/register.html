@@ -1,13 +1,40 @@
 {% extends "OpenCourseAllotment/login.html" %}
 
 {% block form %}
-<form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-        <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
-        <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+
+{% comment %} Student Registration Form {% endcomment %}
+<div class="stud-reg">
+    <div class="reg-buttons">
+        <button class="btn btn-primary btn-active" onclick="showStudentReg()">Student</button>
+        <button class="btn btn-primary" onclick="showTeacherReg()">Teacher</button>
     </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-    Already has an account? <a href="{% url "login" %}">Register</a>
-</form>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="hidden" name="role" value="student">
+            <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
+            <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        Already has an account? <a href="{% url "login" %}">Login</a>
+    </form>
+</div>
+
+{% comment %} Teacher Registration Form {% endcomment %}
+<div class="tr-reg">
+    <div class="reg-buttons">
+        <button class="btn btn-primary" onclick="showStudentReg()">Student</button>
+        <button class="btn btn-primary btn-active" onclick="showTeacherReg()">Teacher</button>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="hidden" name="role" value="teacher">
+            <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
+            <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        Already has an account? <a href="{% url "login" %}">Login</a>
+    </form>
+</div>
 {% endblock %}

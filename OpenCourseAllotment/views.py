@@ -55,4 +55,18 @@ def teacher(request):
 def register(request):
     """Let a student or teacher add an account"""
     
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        role = request.POST["role"]
+        
+        if role == "student":
+            coll = get_database("students")
+        else:
+            coll = get_database("teachers")
+        
+        coll.insert_one({"username": username, "password": password})
+        
+        return redirect('/login')
+        
     return render(request, "OpenCourseAllotment/register.html")

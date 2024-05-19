@@ -87,6 +87,11 @@
     background-color: #7FC7D9;
     font-weight: bold;
 }
+.login-form button:hover {
+    background-color: #0F1035;
+    border: 2px solid #7FC7D9;
+    color: #7FC7D9;
+}
 @media (max-width: 600px) {
     .login-container {
         display: flex;
@@ -103,6 +108,41 @@
         padding: 20px;
         font-size: 30px;
     }
+}
+
+/* ! Registration */
+.stud-reg {
+    /* display: none; */
+    padding: 20px;
+    margin: 20px;
+}
+.tr-reg {
+    display: none;
+    padding: 20px;
+    margin: 20px;
+}
+.reg-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg-buttons .btn {
+    background-color: #365486;
+    border: none;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 0px;
+    width: 40%;
+    margin-bottom: 10px;
+}
+.reg-buttons .btn:hover {
+    background-color: #6cc7dd;
+    border: none;
+    color: white;
+}
+.reg-buttons .btn-active {
+    background-color: #7FC7D9;
+    color: #0F1035;
 }
 
 /* DCF2F1
