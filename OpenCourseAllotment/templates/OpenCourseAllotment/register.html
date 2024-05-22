@@ -5,8 +5,8 @@
 {% comment %} Student Registration Form {% endcomment %}
 <div class="stud-reg">
     <div class="reg-buttons">
-        <button class="btn btn-primary btn-active" onclick="showStudentReg()">Student</button>
-        <button class="btn btn-primary" onclick="showTeacherReg()">Teacher</button>
+        <button class="btn btn-primary btn-active" data-role="student">Student</button>
+        <button class="btn btn-primary" data-role="teacher">Teacher</button>
     </div>
     <form method="post">
         {% csrf_token %}
@@ -23,8 +23,8 @@
 {% comment %} Teacher Registration Form {% endcomment %}
 <div class="tr-reg">
     <div class="reg-buttons">
-        <button class="btn btn-primary" onclick="showStudentReg()">Student</button>
-        <button class="btn btn-primary btn-active" onclick="showTeacherReg()">Teacher</button>
+        <button class="btn btn-primary" data-role="student">Student</button>
+        <button class="btn btn-primary btn-active" data-role="teacher">Teacher</button>
     </div>
     <form method="post">
         {% csrf_token %}
