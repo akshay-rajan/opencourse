@@ -66,8 +66,6 @@
     margin: 20px;
     height: 50vh;
     width: 100%;
-    border: 2px solid #7FC7D9;
-    border-radius: 10px;
     color: #DCF2F1;
 }
 .login-form input {
@@ -143,6 +141,10 @@
 .reg-buttons .btn-active {
     background-color: #7FC7D9;
     color: #0F1035;
+}
+#dept-select {
+    margin: 10px;
+    padding: 10px;
 }
 
 /* DCF2F1
