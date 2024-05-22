@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', ()=> {
-    toggleLogin();
+    toggleRegister();
 });
 
-// ! Login Toggler
-function toggleLogin() {
+// ! Register User Toggler
+function toggleRegister() {
     let buttons = document.querySelectorAll('.reg-buttons button');
     let trReg = document.querySelector('.tr-reg');
     let studReg = document.querySelector('.stud-reg');
