@@ -18,19 +18,42 @@
         Allotment 
     </div>
     <div class="login-main">
-        <div class=" login-form">
-            {% block form %}
-            <form method="post">
-                {% csrf_token %}
-                <div class="form-group">
-                    <input type="email" class="form-control" id="mailid" name="email" required placeholder="Email">
-                    <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-                Don't have an account? <a href="{% url "register" %}">Register</a>
-            </form>
-            {% endblock %}
+    {% block form %}
+    {% comment %} Student Login {% endcomment %}
+    <div class="stud-reg login-form">
+        <div class="reg-buttons">
+            <button class="btn btn-primary btn-active" data-role="student">Student</button>
+            <button class="btn btn-primary" data-role="teacher">Teacher</button>
         </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="hidden" name="role" value="student">
+                <input type="email" class="form-control" name="email" required placeholder="Mail Id">
+                <input type="password" class="form-control" name="password" required placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            Don't have an account? <a href="{% url "register" %}">Register</a>
+        </form>
     </div>
+
+    {% comment %} Teacher Login {% endcomment %}
+    <div class="tr-reg login-form">
+        <div class="reg-buttons">
+            <button class="btn btn-primary" data-role="student">Student</button>
+            <button class="btn btn-primary btn-active" data-role="teacher">Teacher</button>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="hidden" name="role" value="teacher">
+                <input type="number" class="form-control" name="id" required placeholder="Teacher Id">
+                <input type="password" class="form-control" name="password" required placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            Don't have an account? <a href="{% url "register" %}">Register</a>
+        </form>
+    </div>
+    {% endblock %}
 </div>
 {% endblock %}

@@ -3,11 +3,8 @@
 {% block form %}
 
 {% comment %} Student Registration Form {% endcomment %}
-<div class="stud-reg">
-    <div class="reg-buttons">
-        <button class="btn btn-primary btn-active" data-role="student">Student</button>
-        <button class="btn btn-primary" data-role="teacher">Teacher</button>
-    </div>
+<div class="stud-reg login-form">
+    <div class="stud-reg-heading">Student Registration</div>
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
@@ -17,28 +14,6 @@
                 <option value="">Department</option>
                 {% comment %} Pass the name of all departments {% endcomment %}
             </select>
-            <input type="email" class="form-control" name="email" required placeholder="Mail Id">
-            <input type="password" class="form-control" name="password" required placeholder="Password">
-            <input type="password" class="form-control" name="re-password" required placeholder="Re-enter Password">
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-        Already have an account? <a href="{% url "login" %}">Login</a>
-    </form>
-</div>
-
-{% comment %} Teacher Registration Form {% endcomment %}
-<div class="tr-reg">
-    <div class="reg-buttons">
-        <button class="btn btn-primary" data-role="student">Student</button>
-        <button class="btn btn-primary btn-active" data-role="teacher">Teacher</button>
-    </div>
-    <form method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <input type="hidden" name="role" value="teacher">
-            <input type="text" class="form-control" name="name" required placeholder="Name">
-            <input type="number" class="form-control" name="id" required placeholder="Id">
-            {% comment %} Make sure the id is authorized {% endcomment %}
             <input type="email" class="form-control" name="email" required placeholder="Mail Id">
             <input type="password" class="form-control" name="password" required placeholder="Password">
             <input type="password" class="form-control" name="re-password" required placeholder="Re-enter Password">

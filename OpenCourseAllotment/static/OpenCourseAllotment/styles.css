@@ -90,6 +90,29 @@
     border: 2px solid #7FC7D9;
     color: #7FC7D9;
 }
+.reg-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg-buttons .btn {
+    background-color: #365486;
+    border: none;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 0px;
+    width: 40%;
+    margin-bottom: 10px;
+}
+.reg-buttons .btn:hover {
+    background-color: #1f5dc9;
+    border: none;
+    color: white;
+}
+.reg-buttons .btn-active {
+    background-color: #7FC7D9;
+    color: #0F1035;
+}
 @media (max-width: 600px) {
     .login-container {
         display: flex;
@@ -109,6 +132,9 @@
 }
 
 /* ! Registration */
+.stud-reg-heading {
+    font-size: 50px;
+}
 .stud-reg {
     /* display: none; */
     padding: 20px;
@@ -118,29 +144,6 @@
     display: none;
     padding: 20px;
     margin: 20px;
-}
-.reg-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.reg-buttons .btn {
-    background-color: #365486;
-    border: none;
-    padding: 10px;
-    margin: 0px;
-    border-radius: 0px;
-    width: 40%;
-    margin-bottom: 10px;
-}
-.reg-buttons .btn:hover {
-    background-color: #6cc7dd;
-    border: none;
-    color: white;
-}
-.reg-buttons .btn-active {
-    background-color: #7FC7D9;
-    color: #0F1035;
 }
 #dept-select {
     margin: 10px;
