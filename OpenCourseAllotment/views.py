@@ -1,4 +1,5 @@
 import os
+from django.contrib.auth import login, authenticate
 from django.conf import settings
 from django.shortcuts import render, redirect
 from . import allotment_algorithm
@@ -84,3 +85,22 @@ def register(request):
     return render(request, "OpenCourseAllotment/register.html", {
         "departments": departments
     })
+
+def login_view(request):
+    """Enable a student or teacher to login"""
+    
+    if request.method == "POST":
+        if request.POST["role"] == "teacher":
+            return redirect('/teacher')
+        # Get the data from the form
+        email = request.POST["email"]
+        password = request.POST["password"]
+        # Check if the user exists
+        user = authenticate(request, username=email, password=password)
+        print("user: ", user)
+        if user:
+            login(request, user)
+            return redirect('/')
+        else:
+            return redirect('/login')
+    

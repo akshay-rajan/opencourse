@@ -150,6 +150,7 @@
     padding: 10px;
 }
 .message {
+    display: block;
     color: red;
 }
 

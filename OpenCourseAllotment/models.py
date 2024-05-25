@@ -1,12 +1,27 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from .mongo_client import get_database
 
-class CustomUser(AbstractUser):
-    """Custom user model"""
-    
-    is_teacher = models.BooleanField(default=False)
-    # USERNAME_FIELD = 'username  '
-    # REQUIRED_FIELDS = ['username']
-    
+class User:    
+    def __init__(self, username, password, **kwargs):
+        self.username = username
+        self.password = password
+        for key, value in kwargs.items():
+            if key != 'password':
+                setattr(self, key, value)
+            
+    @staticmethod
+    def get_user_by_username(username):
+        db = get_database("students")
+        user_data = db.find_one({'email': username})
+        if user_data:
+            return User(username=user_data['email'], password=user_data['password'])
+        else:
+            db = get_database("teachers")
+            user_data = db.find_one({'name': username})
+            if user_data:
+                return User(username=user_data['email'], password=user_data['password'])
+        return None
+        
     def __str__(self):
         return self.username

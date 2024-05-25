@@ -8,6 +8,7 @@ urlpatterns = [
     path("allotment", views.allotment, name="allotment"),
     path("teacher", views.teacher, name="teacher"),
     path('login/', auth_views.LoginView.as_view(template_name='OpenCourseAllotment/login.html'), name='login'),
+    path('login_view/', views.login_view, name='login_view'),
     path('logout/', auth_views.LogoutView.as_view(template_name='OpenCourseAllotment/logout.html'), name='logout'),
     path('register/', views.register, name='register'),
 ]
