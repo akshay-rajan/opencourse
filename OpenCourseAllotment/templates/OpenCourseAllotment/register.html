@@ -10,9 +10,11 @@
         <div class="form-group">
             <input type="text" class="form-control" name="name" required placeholder="Name">
             <select class="form-control" name="department" required id="dept-select">
-                <option value="">Department</option>
-                <option value="English">English</option>
-                {% comment %} Pass the name of all departments {% endcomment %}
+                <option value="" selected disabled>Department</option>
+                {% comment %} Fetch departments from database {% endcomment %}
+                {% for dept in departments %}
+                    <option value="{{ dept }}">{{ dept }}</option>
+                {% endfor %}
             </select>
             <input type="email" class="form-control" name="email" required placeholder="Mail Id">
             <input type="password" class="form-control" name="password" required placeholder="Password">

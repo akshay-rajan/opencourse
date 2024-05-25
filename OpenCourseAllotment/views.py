@@ -78,4 +78,9 @@ def register(request):
         # Redirect to login page
         return redirect('/login')
         
-    return render(request, "OpenCourseAllotment/register.html")
+    # Get the subjects from the database
+    classes = get_database("classes")
+    departments = [c["class"] for c in classes.find()]
+    return render(request, "OpenCourseAllotment/register.html", {
+        "departments": departments
+    })
