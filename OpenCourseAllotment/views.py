@@ -53,20 +53,29 @@ def teacher(request):
     })
     
 def register(request):
-    """Let a student or teacher add an account"""
+    """Let a student register in the portal"""
     
     if request.method == "POST":
-        username = request.POST["username"]
+        # Get the data from the form
+        username = request.POST["name"]
+        dept = request.POST["department"]
+        email = request.POST["email"]
         password = request.POST["password"]
-        role = request.POST["role"]
-        
-        if role == "student":
-            coll = get_database("students")
-        else:
-            coll = get_database("teachers")
-        
-        coll.insert_one({"username": username, "password": password})
-        
+        repass = request.POST["re-password"]
+        # Validate password
+        if password != repass:
+            return render(request, "OpenCourseAllotment/register.html", {
+                "message": "Passwords do not match!"
+            })
+        # Update the database
+        coll = get_database("students")
+        coll.insert_one({
+            "name": username,
+            "department": dept,
+            "email": email, 
+            "password": password
+        })
+        # Redirect to login page
         return redirect('/login')
         
     return render(request, "OpenCourseAllotment/register.html")
