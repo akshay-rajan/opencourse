@@ -91,7 +91,15 @@ def login_view(request):
     
     if request.method == "POST":
         if request.POST["role"] == "teacher":
-            return redirect('/teacher')
+            id = request.POST["id"]
+            password = request.POST["password"]
+            user = authenticate(request, username=id, password=password)
+            print(user)
+            if user:
+                login(request, user)
+                return redirect('/teacher')
+            else:
+                return redirect('/login')
         # Get the data from the form
         email = request.POST["email"]
         password = request.POST["password"]

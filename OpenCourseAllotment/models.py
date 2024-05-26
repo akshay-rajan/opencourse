@@ -18,9 +18,10 @@ class User:
             return User(username=user_data['email'], password=user_data['password'])
         else:
             db = get_database("teachers")
-            user_data = db.find_one({'name': username})
+            user_data = db.find_one({'teacherid': username})
+            print("user_data: ", user_data)
             if user_data:
-                return User(username=user_data['email'], password=user_data['password'])
+                return User(username=user_data['teacherid'], password=user_data['password'])
         return None
         
     def __str__(self):
