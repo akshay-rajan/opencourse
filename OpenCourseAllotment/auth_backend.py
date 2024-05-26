@@ -6,7 +6,6 @@ from .models import User
 class MongoBackend(BaseBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         user = User.get_user_by_username(username)
-        print(password, user.password)
         if user and password == user.password:
             return self.get_django_user(user)
         return None

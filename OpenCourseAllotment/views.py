@@ -97,7 +97,6 @@ def login_view(request):
         password = request.POST["password"]
         # Check if the user exists
         user = authenticate(request, username=email, password=password)
-        print("user: ", user)
         if user:
             login(request, user)
             return redirect('/')
