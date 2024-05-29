@@ -94,7 +94,6 @@ def login_view(request):
             id = request.POST["id"]
             password = request.POST["password"]
             user = authenticate(request, username=id, password=password)
-            print(user)
             if user:
                 login(request, user)
                 return redirect('/teacher')
