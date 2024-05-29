@@ -1,11 +1,36 @@
 {% extends "OpenCourseAllotment/layout.html" %}
 {% block body %}
 
+<div class="welcome">Welcome, {{ user.name }} </div>
 <div class="home-main">
-    <div class="buttons">
-        <button class="btn btn-primary">Student</button><br>
-        <button class="btn btn-primary">Teacher</button>
-    </div>
+</div>
+<div class="home-content">
+    <table class="table user-details">
+        <tr>
+            <th>Name</th>
+            <td>{{ user.name }}</td>
+        </tr>
+        <tr>
+            <th>Department</th>
+            <td>{{ user.department }}</td>
+        </tr>
+        <tr>
+            <th>Email Address</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>Application Status</th>
+            {% if application_status %}
+                {% if allotment_status %}
+                    <td>Alloted<td>
+                {% else %}
+                    <td>Applied<td>
+                {% endif %}
+            {% else %}
+                <td>Did not Apply!</td>
+            {% endif %}
+        </tr>
+    </table>
 </div>
 
 {% endblock %}

@@ -1,24 +1,6 @@
 .body {
     background-color: #DCF2F1;
 }
-.home-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin: 20px;
-}
-
-.home-main .buttons {
-    margin: 20px;
-    margin-top: 10%;
-    padding: 10px;
-}
-.home-main .buttons .btn {
-    padding: 10px;
-    margin: 2px;
-    width: 40vw;
-}
 .head {
     height: 20vh;
     background-image: url(college.jpg);
@@ -26,6 +8,43 @@
     background-position: center;
     color: white;
     padding: 20px;
+}
+
+/* ! Home */
+.home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome {
+    text-align: left;
+    padding: 20px;
+    margin: 20px;
+    font-size: 30px;
+}
+.user-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 0px;
+    margin: 20px;
+    margin-top: 0px;
+    width: 100%;
+}
+.user-details th {
+    padding: 10px;
+    width: 30vw;
+    border: 1px solid #0F1035;
+    background-color: #7FC7D9;
+    color: #0F1035;
+}
+.user-details td {
+    padding: 10px;
+    width: 20vw;
+    border: 1px solid #0F1035;
+    background-color: #DCF2F1;
+    color: #0F1035;
 }
 
 /* ! Login */

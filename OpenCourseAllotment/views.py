@@ -12,7 +12,13 @@ def index(request):
     if not request.user.is_authenticated:
         return redirect('/login')
     
-    return render(request, 'OpenCourseAllotment/index.html')
+    # Fetch the data of the current user
+    coll = get_database("students")
+    user = coll.find_one({"email": request.user.username})
+        
+    return render(request, 'OpenCourseAllotment/index.html', {
+        "user": user
+    })
 
 def allotment(request):
     """Display the classes and students in each class"""
