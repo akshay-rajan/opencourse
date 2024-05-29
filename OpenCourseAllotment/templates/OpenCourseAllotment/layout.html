@@ -14,11 +14,15 @@
     {% block script %}{% endblock %}
 </head>
 <body>
-    {% block heading %}<h1 class="display-4 head">Open Course Allotment</h1>{% endblock %}
+    {% block heading %}
+    <div class="heading"></div>
+    <h1 class="display-4 head">Open Course Allotment</h1>
+    {% endblock %}
     {% comment %} !---------------------------------------------  {% endcomment %}
     <div class="body">
         {% block body %}
         {% endblock %}
     </div>
+    <div class="user">User: {{ user.email }}</div>
 </body>
 </html>

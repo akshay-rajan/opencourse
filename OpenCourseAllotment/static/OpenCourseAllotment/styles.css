@@ -9,7 +9,12 @@
     color: white;
     padding: 20px;
 }
-
+.user {
+    margin: 1px;
+    padding: 1px;
+    text-align: center;
+    font-size: 12px;
+}
 /* ! Home */
 .home-main {
     display: flex;
