@@ -51,7 +51,28 @@
     background-color: #DCF2F1;
     color: #0F1035;
 }
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.apply-btn {
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border: 1px solid #0F1035;
+    border-radius: 5px;
+    color: #0F1035;
+    background-color: #7FC7D9;
+    font-weight: bold;
 
+}
+.logout-btn {
+    padding: 10px;
+    margin: 10px;
+    text-decoration: underline;
+    margin-right: 0px;
+}
 /* ! Login */
 .login-container {
     display: grid;

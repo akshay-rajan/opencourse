@@ -31,6 +31,10 @@
             {% endif %}
         </tr>
     </table>
-</div>
-
+    {% if not application_status %}    
+        <div class="home-buttons">
+            <a href="" class="btn btn-primary apply-btn">Apply for Allotment</a>
+        </div>
+    {% endif %}
+    <a href="" class="logout-btn">Logout</a>
 {% endblock %}
