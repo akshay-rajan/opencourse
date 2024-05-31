@@ -65,7 +65,6 @@
     color: #0F1035;
     background-color: #7FC7D9;
     font-weight: bold;
-
 }
 .logout-btn {
     padding: 10px;
@@ -197,6 +196,48 @@
 .message {
     display: block;
     color: red;
+}
+
+/* ! Application form */
+.application-heading {
+    font-size: 30px;
+    background-color: #7FC7D9;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+}
+.application-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    width: 100%;
+}
+
+.form-group.default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-group.default input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #7FC7D9;
+    border-radius: 5px;
+    color: #0F1035;
+}
+.application-submit {
+    padding: 10px;
+    margin: 10px;
+    width: 180px;
+    border: 1px solid #0F1035;
+    border-radius: 5px;
+    color: #0F1035;
+    background-color: #7FC7D9;
+    font-weight: bold;
 }
 
 /* DCF2F1

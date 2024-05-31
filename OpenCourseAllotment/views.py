@@ -116,3 +116,26 @@ def login_view(request):
         else:
             return redirect('/login')
     
+def apply(request):
+    """Let students apply for allotment"""
+    
+    if not request.user.is_authenticated:
+        return redirect('/login')
+    
+    if request.method == "POST":
+        # Get the data from the form
+        name = request.POST["name"]
+        email = request.POST["email"]
+        department = request.POST["department"]
+        # Update the database
+        coll = get_database("applications")
+        # ToDo
+        # Redirect to the home page
+        return redirect('/')
+    
+    # Render the application form
+    coll = get_database("students")
+    studnet =  coll.find_one({"email": f"{request.user.username}"})
+    return render(request, "OpenCourseAllotment/apply.html", {
+        "student": studnet
+    })

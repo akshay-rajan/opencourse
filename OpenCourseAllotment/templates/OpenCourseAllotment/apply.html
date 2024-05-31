@@ -1,0 +1,33 @@
+{% extends "OpenCourseAllotment/layout.html" %}
+{% block body %}
+    <h1 class="application-heading">Apply for Open Course Allotment</h1>
+    <div class="application-form">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group default"">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="{{ student.name }}" required disabled>
+                <label for="department">Department:</label>
+                <input type="text" class="form-control" id="department" name="department" placeholder="{{ student.department }}" required disabled>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="option1" name="option1" required>
+                    <option value="" disabled selected>Option 1</option>
+                </select>
+                <select class="form-control" id="option2" name="option2" required>
+                    <option value="" disabled selected>Option 2</option>
+                </select>
+                <select class="form-control" id="option3" name="option3" required>
+                    <option value="" disabled selected>Option 3</option>
+                </select>
+                <select class="form-control" id="option4" name="option4" required>
+                    <option value="" disabled selected>Option 4</option>
+                </select>
+                <select class="form-control" id="option5" name="option5" required>
+                    <option value="" disabled selected>Option 5</option>
+                </select>
+            </div>
+            <input type="submit" class="btn btn-primary application-submit" value="Submit Application">
+        </form>
+    </div>
+{% endblock %}
