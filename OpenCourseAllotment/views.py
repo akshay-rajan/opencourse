@@ -135,7 +135,11 @@ def apply(request):
     
     # Render the application form
     coll = get_database("students")
-    studnet =  coll.find_one({"email": f"{request.user.username}"})
+    student =  coll.find_one({"email": f"{request.user.username}"})
+    coll = get_database("classes")
+    classes = [classes["class"] for classes in coll.find({}) if classes["class"] != student["department"]]
+    
     return render(request, "OpenCourseAllotment/apply.html", {
-        "student": studnet
+        "student": student,
+        "classes": classes
     })

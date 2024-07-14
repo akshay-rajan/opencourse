@@ -23,3 +23,14 @@ function toggleRegister() {
     });
 }
 
+// ! Add Choice for Application
+function addChoice() {
+    let addOptionDiv = document.querySelector('.add-option');
+    let choice = document.querySelectorAll('.choice');
+    let choiceChildren = document.querySelectorAll('.choice > *');
+    choiceChildren.forEach(child => {
+        console.log(child.id);
+    });
+    
+}
+
